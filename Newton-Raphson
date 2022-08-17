@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<conio.h>
+float f1(float);
+float f2(float);
+int main()
+{
+	float x0,x1,result1,result2,iter,x;
+	
+	printf("Enter initial guess for x0 and x1 and iteration\n");
+	scanf("%f %f %f",&x0,&x1,&iter);
+	
+	printf("f(%f) = %f \n",x0,result1);
+//	printf("f(%f) = %f \n",x0,result2);
+	
+	for(int i=1;i<iter;i++)
+	{
+	
+	result1=f1(x0);
+	result2=f2(x0);
+	
+
+	
+	x=x0-(result1/result2);
+	x0=x;
+	printf("X = %f\n",x);
+}
+	return 0;
+}
+float f1(float a)
+{
+	return (a*a)+(4*a)-9;
+}
+float f2(float b)
+{
+	return (2*b)+4;
+}
